@@ -1,0 +1,23 @@
+@charaset "UTF-8";
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+*{
+  text-align: center;
+  font-size: 16px;
+}
+
+h2{
+  font-size: 30px;
+}
+
+p{
+  font-size: 24px;
+}
+
+.introduction{
+  background-color: #c0c0c0;
+}
