@@ -18,6 +18,43 @@ p{
   font-size: 24px;
 }
 
-.introduction{
-  background-color: #c0c0c0;
+div{
+  height: 300px;
+  width: 50%;
+  position: relative;
+}
+
+.intro-left{
+  float: left;
+}
+.intro-right{
+  float: left;
+}
+.image-left{
+  float: left;
+}
+.image-right{
+  float: left;
+}
+
+div .line-left{
+  position: absolute;
+  top: 70px;
+  right: 50px;
+}
+div .line-right{
+  position: absolute;
+  top: 70px;
+  left: 50px;
+}
+
+div .img-left{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+div .img-right{
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
