@@ -1,0 +1,3 @@
+interface:
+  display_name: "blender"
+  short_description: "Blenderに接続し、全周の細部を作り込んだ3Dモデルを制作・検証"

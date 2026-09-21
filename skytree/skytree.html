@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#eeeee7">
+  <meta name="description" content="Blenderで制作した東京スカイツリーの3Dモデル。360度回転しながら、鉄骨の構造から展望台の細部まで自由に探索できます。">
+  <title>SKYTREE / 360 - Architectural Study</title>
+  <link rel="stylesheet" href="skytree.css">
+  <script type="module" src="assets/vendor/model-viewer.min.js"></script>
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#explore">3Dモデルへ移動</a>
+  <header class="header">
+    <a class="brand" href="#explore" aria-label="SKYTREE 360">SKYTREE <span class="brand-sub">/ 360</span></a>
+    <nav aria-label="メインナビゲーション"><a class="active" href="#explore">EXPLORER <span>01</span></a><a href="#details">DETAILS <span>02</span></a></nav>
+  </header>
+  <main>
+    <section class="exhibition" id="explore" aria-labelledby="title">
+      <div class="intro">
+        <p class="eyebrow"><span class="dot"></span> ARCHITECTURE, IN EVERY DIRECTION.</p>
+        <h1 id="title">TOKYO<br>SKYTREE<span class="title-suffix">/ 360</span></h1>
+        <p class="japanese-title">空へ伸びる、その構造を。</p>
+        <p class="intro-copy">いつも見上げるタワーを、自由な視点で。<br>回して、近づいて、細部を見つける。<br>スカイツリーの小さなデジタル建築展。</p>
+        <div class="specs"><div><strong>634<span>m</span></strong><p>HEIGHT</p></div><div><strong>360<span>°</span></strong><p>PERSPECTIVE</p></div></div>
+        <div class="view-menu" role="group" aria-label="見る場所を選択">
+          <p class="eyebrow">CHOOSE YOUR PERSPECTIVE</p>
+          <button class="view-button selected" data-view="full" aria-pressed="true" disabled><span class="view-number">01</span><span>タワー全景<small>THE WHOLE STRUCTURE</small></span><span class="view-arrow">↗</span></button>
+          <button class="view-button" data-view="deck" aria-pressed="false" disabled><span class="view-number">02</span><span>天望デッキ<small>350 m · OBSERVATION DECK</small></span><span class="view-arrow">↗</span></button>
+          <button class="view-button" data-view="gallery" aria-pressed="false" disabled><span class="view-number">03</span><span>天望回廊<small>450 m · TEMBO GALLERIA</small></span><span class="view-arrow">↗</span></button>
+          <button class="view-button" data-view="base" aria-pressed="false" disabled><span class="view-number">04</span><span>足元の構造<small>THE TRIANGULAR FOUNDATION</small></span><span class="view-arrow">↗</span></button>
+        </div>
+        <p class="edition">DIGITAL MODEL STUDY <span>NO. 001 / TOKYO</span></p>
+      </div>
+      <div class="viewer-panel" id="viewer-panel">
+        <div class="viewer-top"><span><i class="live-dot"></i> INTERACTIVE 3D</span><button id="theme" aria-label="3D背景を暗くする" aria-pressed="false">◐ <span>背景</span></button></div>
+        <span class="vertical-label" aria-hidden="true">SUMIDA, TOKYO — ARCHITECTURAL STUDY</span>
+        <div class="height-mark" aria-hidden="true"><span>634 m</span><i></i><span>0 m</span></div>
+        <model-viewer id="skytree" poster="assets/images/skytree-poster.webp" src="assets/models/skytree.glb" alt="東京スカイツリーの詳細3Dモデル。ドラッグまたは矢印キーで360度回転、ホイールまたはピンチで拡大縮小できます。" camera-controls touch-action="pan-y" camera-orbit="30deg 82deg 15m" camera-target="0m 3.1m 0m" field-of-view="30deg" min-camera-orbit="auto 5deg 0.5m" max-camera-orbit="auto 175deg 24m" min-field-of-view="30deg" max-field-of-view="30deg" environment-image="neutral" exposure="1.15" shadow-intensity="0.6" shadow-softness="1" interaction-prompt="none" loading="eager" reveal="auto" aria-describedby="gesture-help">
+          <div slot="progress-bar"></div>
+        </model-viewer>
+        <div class="loading" id="loading" role="status"><span class="loading-symbol">↻</span><strong>タワーを組み立てています</strong><span id="load-progress">3Dモデルを読み込み中…</span><progress id="progress" max="1" value="0" aria-label="3Dモデルの読み込み状況"></progress></div>
+        <div class="error-state" id="error" hidden role="alert"><img src="assets/images/skytree-poster.webp" alt="スカイツリーの完成イメージ"><div><strong>3D表示を読み込めませんでした</strong><p>通信環境とWebGL対応ブラウザをご確認ください。</p><button id="retry">再読み込み</button><a href="assets/images/skytree-poster.webp">完成画像を見る ↗</a></div></div>
+        <div class="viewer-bottom"><div class="view-caption"><span id="view-index">01 / 04</span><strong id="view-title">タワー全景</strong></div><div class="tools" role="group" aria-label="3D表示の操作"><button id="rotate" aria-label="自動回転を開始" aria-pressed="false" disabled><span id="rotate-symbol">▶</span><span id="rotate-label">自動回転</span></button><span class="separator"></span><button id="zoom-in" aria-label="拡大" title="拡大" disabled>＋</button><button id="zoom-out" aria-label="縮小" title="縮小" disabled>−</button><button id="reset" aria-label="全景に戻す" title="全景に戻す" disabled>↺</button></div></div>
+        <p class="gesture-help" id="gesture-help"><span>↔ ドラッグで回転</span><span>⊕ スクロール / ピンチで拡大</span></p>
+        <noscript><p class="no-script">360度の操作にはJavaScriptを有効にしてください。<a href="assets/images/skytree-poster.webp">完成画像を見る</a></p></noscript>
+      </div>
+    </section>
+    <section class="details" id="details" aria-labelledby="detail-title">
+      <div class="detail-heading"><p class="eyebrow">02 / A CLOSER LOOK</p><h2 id="detail-title">遠くからでは、<br>見えない美しさ。</h2><p>緻密に重なる鉄骨、円を描く窓、空中をめぐる回廊。<br>ひとつずつのディテールが、タワーの輪郭をつくります。</p><button class="text-link" data-view="deck" disabled>展望台に近づく <span>↗</span></button></div>
+      <figure><img src="assets/images/deck-detail.webp" alt="展望台の窓枠、放射状の屋根の継ぎ目と下面の補強材を再現したBlenderモデル" loading="lazy" width="900" height="1300"><figcaption><span>DETAIL 01 — TEMBO DECK</span><span>MODELED IN BLENDER</span></figcaption></figure>
+    </section>
+    <div class="project-note"><p>Blenderで制作した外観の近似モデルを展示しています。実施設計図に基づくものではありません。</p><a href="https://www.tokyo-skytree.jp/about/outline/" target="_blank" rel="noopener noreferrer">建築の参考資料 ↗</a></div>
+  </main>
+  <footer><a class="brand" href="#explore" aria-label="SKYTREE 360">SKYTREE <span class="brand-sub">/ 360</span></a><span>BUILT WITH CURIOSITY. EXPLORED BY YOU.</span><a href="#explore">BACK TO TOP ↑</a></footer>
+</body>
+</html>
