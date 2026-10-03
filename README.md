@@ -1,7 +1,8 @@
 This is my introduction page.
 
 ## My Introduction
-[Home](https://millea.github.io/)
+- [Home](https://millea.github.io/)
 
-## 3D Page
-[スカイツリー3D](https://millea.github.io/skytree/skytree.html)
+## Pages
+- [スカイツリー3D](https://millea.github.io/skytree/skytree.html)
+- [スタジオ紹介](https://millea.github.io/yohaku/index.html)
