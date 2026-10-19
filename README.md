@@ -10,3 +10,4 @@ This is my introduction page.
 
 ## App
 - [家族習慣トラッカー](https://habit-tracker-809b0.web.app/)
+- [子供勉強まなびっこ](https://manabikko-d8ee9.web.app/)
